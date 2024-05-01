@@ -1,34 +1,39 @@
+using PostManCloneLibrary.BusinessLogic;
+using PostManCloneLibrary.Interfaces;
+
 namespace PostManCloneUi
 {
     public partial class _mainWindowDashboard : Form
     {
+        private readonly IApiAccess apiAccess = new ApiAccess();
+
         public _mainWindowDashboard()
         {
             InitializeComponent();
-            this.KeyPreview = true;
+            KeyPreview = true;
         }
 
-
-        private async void _CallApiTextBoxButton_Click(object sender, EventArgs e)
+        private async void CallApiTextBoxButton_Click(object sender, EventArgs e)
         {
+            systemStatus.Text = "Calling API...";
+            resultsTextBox.Text = string.Empty;
 
-            // Add Some validation for API URL here
+            if (!apiAccess.IsValidUrl(apiTextBox.Text))
+            {
+                systemStatus.Text = "Invalid URL";
+                return;
+            }
+
             try
             {
-                _systemStatus.Text = "Calling API...";
+                resultsTextBox.Text = await apiAccess.CallApiAsync(apiTextBox.Text);
 
-
-                // Sample code - replace with the acutal API call.
-
-                await Task.Delay(2000);
-
-
-                _systemStatus.Text = "Ready";
+                systemStatus.Text = "Ready";
             }
             catch (Exception ex)
             {
-                _resultsTextBox.Text = $"Enjoy this beautfiul exception message: {ex.Message}";
-                _systemStatusBar.Text = "Error";
+                resultsTextBox.Text = $"Enjoy this beautfiul exception message: {ex.Message}";
+                systemStatusBar.Text = "Error";
             }
         }
 
