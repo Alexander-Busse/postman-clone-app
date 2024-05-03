@@ -3,11 +3,11 @@ using PostManCloneLibrary.Interfaces;
 
 namespace PostManCloneUi
 {
-    public partial class _mainWindowDashboard : Form
+    public partial class MainWindowDashboard : Form
     {
         private readonly IApiAccess apiAccess = new ApiAccess();
 
-        public _mainWindowDashboard()
+        public MainWindowDashboard()
         {
             InitializeComponent();
             KeyPreview = true;
@@ -15,29 +15,29 @@ namespace PostManCloneUi
 
         private async void CallApiTextBoxButton_Click(object sender, EventArgs e)
         {
-            systemStatus.Text = "Calling API...";
-            resultsTextBox.Text = string.Empty;
+            SystemStatus.Text = Resources.SystemStatusMessages.CallingApi;
+            ResultsTextBox.Text = string.Empty;
 
-            if (!apiAccess.IsValidUrl(apiTextBox.Text))
+            if (!apiAccess.IsValidUrl(ApiTextBox.Text))
             {
-                systemStatus.Text = "Invalid URL";
+                SystemStatus.Text = Resources.SystemStatusMessages.InvalidUrl;
                 return;
             }
 
             try
             {
-                resultsTextBox.Text = await apiAccess.CallApiAsync(apiTextBox.Text);
+                ResultsTextBox.Text = await apiAccess.CallApiAsync(ApiTextBox.Text);
 
-                systemStatus.Text = "Ready";
+                SystemStatus.Text = Resources.SystemStatusMessages.Ready;
             }
             catch (Exception ex)
             {
-                resultsTextBox.Text = $"Enjoy this beautfiul exception message: {ex.Message}";
-                systemStatusBar.Text = "Error";
+                ResultsTextBox.Text = string.Format(Resources.UiErrorMessages.Exception, ex.Message);
+                SystemStatusBar.Text = Resources.SystemStatusMessages.Error;
             }
         }
 
-        private void _mainWindowDashboard_KeyDown(object sender, KeyEventArgs e)
+        private void MainWindowDashboard_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
             {

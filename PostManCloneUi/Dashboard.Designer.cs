@@ -1,6 +1,8 @@
-﻿namespace PostManCloneUi
+﻿using PostManCloneUi.Resources;
+
+namespace PostManCloneUi
 {
-    partial class _mainWindowDashboard
+    partial class MainWindowDashboard
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,136 +30,135 @@
         /// </summary>
         private void InitializeComponent()
         {
-            _appHeaderLabel = new Label();
-            _apiLabel = new Label();
-            apiTextBox = new TextBox();
-            _apiTextBoxButton = new Button();
-            _resultsLabel = new Label();
-            systemStatus = new ToolStripStatusLabel();
-            systemStatusBar = new StatusStrip();
-            resultsTextBox = new TextBox();
-            systemStatusBar.SuspendLayout();
+            AppHeaderLabel = new Label();
+            ApiLabel = new Label();
+            ApiTextBox = new TextBox();
+            ApiTextBoxButton = new Button();
+            ResultsLabel = new Label();
+            SystemStatus = new ToolStripStatusLabel();
+            SystemStatusBar = new StatusStrip();
+            ResultsTextBox = new TextBox();
+            SystemStatusBar.SuspendLayout();
             SuspendLayout();
             // 
-            // _appHeaderLabel
+            // AppHeaderLabel
             // 
-            _appHeaderLabel.AutoSize = true;
-            _appHeaderLabel.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            _appHeaderLabel.ForeColor = SystemColors.ControlLightLight;
-            _appHeaderLabel.Location = new Point(45, 24);
-            _appHeaderLabel.Name = "_appHeaderLabel";
-            _appHeaderLabel.Size = new Size(440, 65);
-            _appHeaderLabel.TabIndex = 0;
-            _appHeaderLabel.Text = "PostMan Clone Test";
+            AppHeaderLabel.AutoSize = true;
+            AppHeaderLabel.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            AppHeaderLabel.ForeColor = SystemColors.ControlLightLight;
+            AppHeaderLabel.Location = new Point(45, 24);
+            AppHeaderLabel.Name = "AppHeaderLabel";
+            AppHeaderLabel.Size = new Size(440, 65);
+            AppHeaderLabel.TabIndex = 0;
+            AppHeaderLabel.Text = "PostMan Clone Test";
             // 
-            // _apiLabel
+            // ApiLabel
             // 
-            _apiLabel.AutoSize = true;
-            _apiLabel.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            _apiLabel.ForeColor = SystemColors.ControlLightLight;
-            _apiLabel.Location = new Point(50, 138);
-            _apiLabel.Name = "_apiLabel";
-            _apiLabel.Size = new Size(81, 48);
-            _apiLabel.TabIndex = 1;
-            _apiLabel.Text = "API:";
+            ApiLabel.AutoSize = true;
+            ApiLabel.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ApiLabel.ForeColor = SystemColors.ControlLightLight;
+            ApiLabel.Location = new Point(50, 138);
+            ApiLabel.Name = "ApiLabel";
+            ApiLabel.Size = new Size(81, 48);
+            ApiLabel.TabIndex = 1;
+            ApiLabel.Text = "API:";
             // 
-            // _apiTextBox
+            // ApiTextBox
             // 
-            apiTextBox.Location = new Point(137, 140);
-            apiTextBox.Name = "_apiTextBox";
-            apiTextBox.Size = new Size(1120, 55);
-            apiTextBox.TabIndex = 2;
+            ApiTextBox.Location = new Point(137, 140);
+            ApiTextBox.Name = "ApiTextBox";
+            ApiTextBox.Size = new Size(1120, 55);
+            ApiTextBox.TabIndex = 2;
             // 
-            // _apiTextBoxButton
+            // ApiTextBoxButton
             // 
-            _apiTextBoxButton.BackColor = Color.Black;
-            _apiTextBoxButton.ForeColor = SystemColors.ControlLightLight;
-            _apiTextBoxButton.Location = new Point(1263, 140);
-            _apiTextBoxButton.Name = "_apiTextBoxButton";
-            _apiTextBoxButton.Size = new Size(124, 55);
-            _apiTextBoxButton.TabIndex = 3;
-            _apiTextBoxButton.TabStop = false;
-            _apiTextBoxButton.Text = "Go";
-            _apiTextBoxButton.UseVisualStyleBackColor = false;
-            _apiTextBoxButton.Click += CallApiTextBoxButton_Click;
+            ApiTextBoxButton.BackColor = Color.Black;
+            ApiTextBoxButton.ForeColor = SystemColors.ControlLightLight;
+            ApiTextBoxButton.Location = new Point(1263, 140);
+            ApiTextBoxButton.Name = "ApiTextBoxButton";
+            ApiTextBoxButton.Size = new Size(124, 55);
+            ApiTextBoxButton.TabIndex = 3;
+            ApiTextBoxButton.TabStop = false;
+            ApiTextBoxButton.Text = UiComponentsDisplayNames.GoButtonText;
+            ApiTextBoxButton.UseVisualStyleBackColor = false;
+            ApiTextBoxButton.Click += CallApiTextBoxButton_Click;
             // 
-            // _resultsLabel
+            // ResultsLabel
             // 
-            _resultsLabel.AutoSize = true;
-            _resultsLabel.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            _resultsLabel.ForeColor = SystemColors.ControlLightLight;
-            _resultsLabel.Location = new Point(50, 231);
-            _resultsLabel.Name = "_resultsLabel";
-            _resultsLabel.Size = new Size(139, 48);
-            _resultsLabel.TabIndex = 6;
-            _resultsLabel.Text = "Results:";
+            ResultsLabel.AutoSize = true;
+            ResultsLabel.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ResultsLabel.ForeColor = SystemColors.ControlLightLight;
+            ResultsLabel.Location = new Point(50, 231);
+            ResultsLabel.Name = "ResultsLabel";
+            ResultsLabel.Size = new Size(139, 48);
+            ResultsLabel.TabIndex = 6;
+            ResultsLabel.Text = "Results:";
             // 
-            // _systemStatus
+            // SystemStatus
             // 
-            systemStatus.ActiveLinkColor = Color.DarkRed;
-            systemStatus.AutoToolTip = true;
-            systemStatus.Font = new Font("Segoe UI", 12F);
-            systemStatus.ForeColor = SystemColors.ControlLightLight;
-            systemStatus.Name = "_systemStatus";
-            systemStatus.Size = new Size(78, 32);
-            systemStatus.Text = "Ready";
+            SystemStatus.ActiveLinkColor = Color.DarkRed;
+            SystemStatus.AutoToolTip = true;
+            SystemStatus.Font = new Font("Segoe UI", 12F);
+            SystemStatus.ForeColor = SystemColors.ControlLightLight;
+            SystemStatus.Name = "SystemStatus";
+            SystemStatus.Size = new Size(78, 32);
+            SystemStatus.Text = UiComponentsDisplayNames.StatusBarReadyText;
             // 
-            // _systemStatusBar
+            // SystemStatusBar
             // 
-            systemStatusBar.ImageScalingSize = new Size(24, 24);
-            systemStatusBar.Items.AddRange(new ToolStripItem[] { systemStatus });
-            systemStatusBar.Location = new Point(0, 1053);
-            systemStatusBar.Name = "_systemStatusBar";
-            systemStatusBar.Size = new Size(1437, 39);
-            systemStatusBar.SizingGrip = false;
-            systemStatusBar.TabIndex = 5;
-            systemStatusBar.Text = "_statusBar";
+            SystemStatusBar.ImageScalingSize = new Size(24, 24);
+            SystemStatusBar.Items.AddRange(new ToolStripItem[] { SystemStatus });
+            SystemStatusBar.Location = new Point(0, 1053);
+            SystemStatusBar.Name = "SystemStatusBar";
+            SystemStatusBar.Size = new Size(1437, 39);
+            SystemStatusBar.SizingGrip = false;
+            SystemStatusBar.TabIndex = 5;
+            SystemStatusBar.Text = "_statusBar";
             // 
-            // _resultsTextBox
+            // ResultsTextBox
             // 
-            resultsTextBox.Location = new Point(50, 307);
-            resultsTextBox.Multiline = true;
-            resultsTextBox.Name = "_resultsTextBox";
-            resultsTextBox.ScrollBars = ScrollBars.Both;
-            resultsTextBox.Size = new Size(1337, 693);
-            resultsTextBox.TabIndex = 7;
+            ResultsTextBox.Location = new Point(50, 307);
+            ResultsTextBox.Multiline = true;
+            ResultsTextBox.Name = "ResultsTextBox";
+            ResultsTextBox.ScrollBars = ScrollBars.Both;
+            ResultsTextBox.Size = new Size(1337, 693);
+            ResultsTextBox.TabIndex = 7;
             // 
-            // _mainWindowDashboard
+            // MainWindowDashboard
             // 
-            AcceptButton = _apiTextBoxButton;
+            AcceptButton = ApiTextBoxButton;
             AutoScaleDimensions = new SizeF(20F, 48F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.HotTrack;
             ClientSize = new Size(1437, 1092);
-            Controls.Add(resultsTextBox);
-            Controls.Add(_resultsLabel);
-            Controls.Add(systemStatusBar);
-            Controls.Add(_apiTextBoxButton);
-            Controls.Add(apiTextBox);
-            Controls.Add(_apiLabel);
-            Controls.Add(_appHeaderLabel);
+            Controls.Add(ResultsTextBox);
+            Controls.Add(ResultsLabel);
+            Controls.Add(SystemStatusBar);
+            Controls.Add(ApiTextBoxButton);
+            Controls.Add(ApiTextBox);
+            Controls.Add(ApiLabel);
+            Controls.Add(AppHeaderLabel);
             Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(6);
-            Name = "_mainWindowDashboard";
-            Text = "Postman Clone";
+            Name = "MainWindowDashboard";
             TopMost = true;
-            KeyDown += _mainWindowDashboard_KeyDown;
-            systemStatusBar.ResumeLayout(false);
-            systemStatusBar.PerformLayout();
+            KeyDown += MainWindowDashboard_KeyDown;
+            SystemStatusBar.ResumeLayout(false);
+            SystemStatusBar.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label _appHeaderLabel;
-        private Label _apiLabel;
-        private TextBox apiTextBox;
-        private Button _apiTextBoxButton;
-        private Label _resultsLabel;
-        private ToolStripStatusLabel systemStatus;
-        private StatusStrip systemStatusBar;
-        private TextBox resultsTextBox;
+        private Label AppHeaderLabel;
+        private Label ApiLabel;
+        private TextBox ApiTextBox;
+        private Button ApiTextBoxButton;
+        private Label ResultsLabel;
+        private ToolStripStatusLabel SystemStatus;
+        private StatusStrip SystemStatusBar;
+        private TextBox ResultsTextBox;
     }
 }
